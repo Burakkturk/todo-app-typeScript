@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Typography } from "@mui/material";
-import AddTodoComp from "../components/AddTodoComp";
+import AddTodoComp  from "../components/AddTodoComp";
+
+import TodoList from "../components/TodoList";
 interface TodoType {
   todo: string;
   isDone: boolean;
@@ -29,7 +31,7 @@ const Home = () => {
 
     //   }
     type AddFn = (text: string) => Promise<void>;
-    const addTodo: AddFn = async (text) => {
+    const addTodo: AddFn = async text => {
       try {
         await axios.post(url, { todo: text, isDone: false });
       } catch (error) {
@@ -54,7 +56,8 @@ const Home = () => {
       >
         Todo App With Typescript
       </Typography>
-      <AddTodoComp addTodo={addTodo} />
+      <AddTodoComp addTodo={""} />
+      <TodoList />
     </Container>
   );
 };

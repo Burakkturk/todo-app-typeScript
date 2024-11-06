@@ -12,9 +12,9 @@ const AddTodoComp = ({addTodo} : IAddTodoComp) => {
   const [text,setText] = useState("")
 
   const handleClick= () => {
-    console.log(text)
+    console.log(text);
     addTodo(text)
-    setText("")
+    setText("");
   }
   return ( 
     <Container>
