@@ -2,7 +2,12 @@ import { Box, Button, Container, TextField } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";
 import { useState } from "react";
 
-const AddTodoComp = () => {
+interface IAddTodoComp {
+  // addTodo: (text: string) => Promise<void>
+  addTodo: AddFn
+}
+
+const AddTodoComp = ({addTodo} : IAddTodoComp) => {
   // const [text,setText] = useState<string>("")
   const [text,setText] = useState("")
 
