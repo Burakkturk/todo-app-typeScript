@@ -13,6 +13,7 @@ const AddTodoComp = ({addTodo} : IAddTodoComp) => {
 
   const handleClick= () => {
     console.log(text)
+    addTodo(text)
     setText("")
   }
   return ( 
