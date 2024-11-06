@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { Container, Typography } from "@mui/material"
+import AddTodoComp from "../components/AddTodoComp"
 interface TodoType {
   "todo":string ,"isDone":boolean,"id":string | number,
 }
@@ -20,15 +22,19 @@ try {
   console.log(error)
   
 }
-return "merhaba"
 }
 useEffect(() => {
   getTodos()
 },[])
 
   return (
-    <div onClick={() => setTodos([{id:5, todo:"eren", isDone:true}])}>Home</div>
+  <Container>
+    <Typography color="error" align="center" variant="h2" component={"h1"} mt={3}>
+      Todo App With Typescript
+    </Typography>
+    <AddTodoComp/>
+  </Container>
   )
-}
+};
 
 export default Home

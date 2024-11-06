@@ -1,5 +1,5 @@
 import { Container } from '@mui/material'
-import Home from './pages/Home'
+import Home from './pages/Home.tsx'
 
 
 
