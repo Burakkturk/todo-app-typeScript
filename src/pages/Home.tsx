@@ -4,6 +4,7 @@ import { Container, Typography } from "@mui/material";
 import AddTodoComp  from "../components/AddTodoComp";
 
 import TodoList from "../components/TodoList";
+import TodoListItem from "../components/TodoListItem";
 interface TodoType {
   todo: string;
   isDone: boolean;
@@ -56,8 +57,11 @@ const Home = () => {
       >
         Todo App With Typescript
       </Typography>
+   
       <AddTodoComp addTodo={""} />
+      
       <TodoList />
+      
     </Container>
   );
 };

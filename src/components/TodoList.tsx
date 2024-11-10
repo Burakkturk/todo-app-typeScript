@@ -1,4 +1,5 @@
 import { Grid2, Typography } from "@mui/material";
+import TodoListItem from "./TodoListItem";
 
 const TodoList = () => {
   return (
@@ -25,6 +26,7 @@ const TodoList = () => {
         <Typography color="secondary" align="center" variant="h4">
           InProgress Todos
         </Typography>
+        <TodoListItem/>
       </Grid2>
       <Grid2
         item
@@ -40,6 +42,7 @@ const TodoList = () => {
         <Typography color="success" align="center" variant="h4">
           Completed Todos
         </Typography>
+        <TodoListItem/>
       </Grid2>
     </Grid2>
   );
