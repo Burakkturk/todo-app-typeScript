@@ -5,11 +5,11 @@ import AddTodoComp  from "../components/AddTodoComp";
 
 import TodoList from "../components/TodoList";
 import TodoListItem from "../components/TodoListItem";
-interface TodoType {
-  todo: string;
-  isDone: boolean;
-  id: string | number;
-}
+// interface TodoType {
+//   todo: string;
+//   isDone: boolean;
+//   id: string | number;
+// }
 
 const Home = () => {
   // const [todos,setTodos] = useState([] as TodoType[])
@@ -41,11 +41,30 @@ const Home = () => {
         getTodos();
       }
     };
-  };
+    const toggleTodo: ToggleFn = async (todo) => {
+      try {
+        await axios.put(`${url}/${todo.id}`, {...todo,isDone: !todo.isDone});
+      } catch (error) {
+        console.log(error);
+      } finally {
+        getTodos();
+      }
+    };
+
+    const deleteTodo: DeleteFn = async (id) => {
+      try {
+        await axios.delete(`${url}/${id}`);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        getTodos();
+      }
+    };
+  
   useEffect(() => {
     getTodos();
   }, []);
-
+}
   return (
     <Container>
       <Typography
@@ -60,7 +79,7 @@ const Home = () => {
    
       <AddTodoComp addTodo={""} />
       
-      <TodoList />
+      <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
       
     </Container>
   );

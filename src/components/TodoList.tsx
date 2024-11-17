@@ -1,10 +1,17 @@
 import { Grid2, Typography } from "@mui/material";
 import TodoListItem from "./TodoListItem";
-
-const TodoList = () => {
+import React from "react";
+interface ITodoList {
+  todos: TodoType[];
+  deleteTodo:DeleteFn
+  toggleTodo:ToggleFn
+}
+const TodoList:React.FC<ITodoList> = ({todos, toggleTodo, deleteTodo}) => {
+  const progressTodos = todos.filter(item => !item.isDone)
+  const completedTodos = todos.filter(item => !item.isDone)
   return (
     <Grid2
-      container
+      container 
       sx={{
         d: "flex",
         justifyContent: "center",
@@ -26,7 +33,12 @@ const TodoList = () => {
         <Typography color="secondary" align="center" variant="h4">
           InProgress Todos
         </Typography>
-        <TodoListItem/>
+        {progressTodos.length ? ( progressTodos.map(todo => <TodoListItem todo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>)): (
+          <Typography color="error" mt={3}>
+            No progress todos!{""}
+          </Typography>
+        )}
+      
       </Grid2>
       <Grid2
         item
@@ -42,7 +54,12 @@ const TodoList = () => {
         <Typography color="success" align="center" variant="h4">
           Completed Todos
         </Typography>
-        <TodoListItem/>
+        {completedTodos.length ? ( completedTodos.map(todo => <TodoListItem todo={todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>)): (
+          <Typography color="error" mt={3}>
+            No completed todos!{""}
+          </Typography>
+        )}
+     
       </Grid2>
     </Grid2>
   );
