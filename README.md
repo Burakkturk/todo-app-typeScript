@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+# Welcome to Movie App :wave:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Thanks to visit my Github! In this project, i used React-Context. This project is created with React, Bootstrap, axios, React-Router, Private-Router. Here is the website link for this project (https://movie-app-177.netlify.app/)
+Project aims to create a Movie App. 
 
-Currently, two official plugins are available:
+## Output
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Todo-App](./Todo%20App.gif)
 
-## Expanding the ESLint configuration
+### At the end of the project, following topics are to be covered;
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-  HTML
 
-- Configure the top-level `parserOptions` property like this:
+-  CSS
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+-  JS
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+-  TS
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+-  React
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Got feedback for me?
+
+Feedbacks are always improve my technical knowledge, so feel free to give me a feedback through my LinkedIn account (https://www.linkedin.com/in/burakkturk) 🙌
+
+This Is What I Did! :art:
+

@@ -1,5 +1,5 @@
 import { IconButton, ListItem, ListItemText } from "@mui/material"
-import React, {FC} from "react";
+import {FC} from "react";
 import DeleteIcon from "@mui/icons-material/Delete"
 interface ITodoListItem {
   todo: TodoType;

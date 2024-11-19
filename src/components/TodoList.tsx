@@ -1,4 +1,4 @@
-import { Grid2, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import TodoListItem from "./TodoListItem";
 import React from "react";
 interface ITodoList {
@@ -10,7 +10,7 @@ const TodoList:React.FC<ITodoList> = ({todos, toggleTodo, deleteTodo}) => {
   const progressTodos = todos.filter(item => !item.isDone)
   const completedTodos = todos.filter(item => !item.isDone)
   return (
-    <Grid2
+    <Grid
       container 
       sx={{
         d: "flex",
@@ -19,7 +19,7 @@ const TodoList:React.FC<ITodoList> = ({todos, toggleTodo, deleteTodo}) => {
         gap: "0.5rem",
       }}
     >
-      <Grid2
+      <Grid
         item
         xs={12}
         sm={5}
@@ -39,8 +39,8 @@ const TodoList:React.FC<ITodoList> = ({todos, toggleTodo, deleteTodo}) => {
           </Typography>
         )}
       
-      </Grid2>
-      <Grid2
+      </Grid>
+      <Grid
         item
         xs={12}
         sm={5}
@@ -60,8 +60,8 @@ const TodoList:React.FC<ITodoList> = ({todos, toggleTodo, deleteTodo}) => {
           </Typography>
         )}
      
-      </Grid2>
-    </Grid2>
+      </Grid>
+    </Grid>
   );
 };
 
